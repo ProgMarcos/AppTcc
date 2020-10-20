@@ -9,8 +9,9 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-
-import Login from './src/Login'
+import Index from './src/nav/index'
+import Login from './src/Telas/Login'
+import Quest from './src/Telas/quest'
 
 
 
@@ -18,9 +19,9 @@ export default class App extends Component{
   
   render(){
     return(
-      <View>
-        <Login />
-      </View>
+      <SafeAreaView>
+          <Quest/>
+      </SafeAreaView>
     )
   }
 }
