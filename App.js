@@ -12,6 +12,9 @@ import {
 import Index from './src/nav/index'
 import Login from './src/Telas/Login'
 import Quest from './src/Telas/quest'
+import ListQuest from './src/Telas/ListQuest'
+import Resultado from './src/Telas/resultado'
+import quest from './src/Telas/quest';
 
 
 
@@ -19,8 +22,8 @@ export default class App extends Component{
   
   render(){
     return(
-      <SafeAreaView>
-          <Quest/>
+      <SafeAreaView style={styles.container}>
+          <Resultado/>
       </SafeAreaView>
     )
   }
@@ -29,7 +32,7 @@ export default class App extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   logo: {
