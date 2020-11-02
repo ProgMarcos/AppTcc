@@ -1,7 +1,3 @@
-      import Resultado from './resultado'
-      import {props} from './resultado'
-      import React from "react"
-      
       var isoa = false 
       var isob = false
       var isoc = false
@@ -59,7 +55,16 @@
       var moro =  {nome: "Sérgio Moro", valor: 0, id:5}
       var bolso =  {nome: "Jair Messias Bolsonaro", valor: 0,id:6}
       var doria =  {nome: "João Dória Jr.", valor: 0, id:7}
-         
+    
+      export function zerar(){
+        haddad.valor=0
+        dino.valor=0
+        ciro.valor=0
+        huck.valor=0
+        moro.valor=0
+        bolso.valor=0
+        doria.valor=0
+      }
          
     export function isof(x){
     if (x.id == 1){
@@ -277,7 +282,21 @@
         }
   }
 
-  export function calculo(){
+  export function verif(){
+    if ((isoa==false&&isob==false&&isoc==false) ||(meda==false&&medb==false&&medc==false)
+    ||(cota==false&&cotb==false&&cotc==false)  ||(prea==false&&preb==false&&prec==false)
+    ||(aboa==false&&abob==false&&aboc==false)  ||(maca==false&&macb==false&&macc==false)
+    ||(arma==false&&armb==false&&armc==false)  ||(pria==false&&prib==false&&pric==false)
+    ||(amaa==false&&amab==false&&amac==false)  ||(inda==false&&indb==false&&indc==false)
+    ||(pena==false&&penb==false&&penc==false)  ||(traa==false&&trab==false&&trac==false)){
+      console.warn("Você deve responder todas as questões.")
+      return 0 
+    } else {
+      return calculo()}
+    }
+  
+
+  function calculo(){
     var valores = [isoa, isob, isoc, meda, medb, medc, cota, cotb,
       cotc, prea, preb, prec, aboa, abob, aboc, maca, macb, macc,
        arma, armb, armc, pria, prib, pric, amaa, amab, amac, inda, 
@@ -462,28 +481,14 @@
         }
       }
     }
-    amostragem()
+   var x = amostragem()
+   return x
   }
 
   export function amostragem(){
     var candidatos = [ciro, dino, bolso, doria, huck, moro, haddad]
     candidatos.sort( function(a, b){
       return b.valor - a.valor;
-   });
-    {/* if (candidatos[0].id == 1)
-      return 1
-      if (candidatos[0].id == 2)
-      return 2
-      if (candidatos[0].id == 3)
-      return 3
-      if (candidatos[0].id == 4)
-      return 4
-      if (candidatos[0].id == 5)
-      return 5
-      if (candidatos[0].id == 6)
-      return 6
-      if (candidatos[0].id == 7)
-    return 7 */}
-      console.warn(candidatos[0].nome)
-    //props(1)
+   })
+      return (candidatos[0].id)
   }
